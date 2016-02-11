@@ -20,7 +20,7 @@ class baseline::apt {
   file_line { 'apt-reboot':
     path => '/etc/apt/apt.conf.d/50unattended-upgrades',
     match => '[/\w]*Unattended-Upgrade::Automatic-Reboot "false";',
-    line => '\tUnattended-Upgrade::Automatic-Reboot "true";'
+    line => '\tUnattended-Upgrade::Automatic-Reboot "true";',
     require => Package['unattened-upgrades'],
   }
 
