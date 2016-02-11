@@ -44,9 +44,13 @@
 #
 class baseline {
 
-	file { "/usr/local/bin/puppet":
-		ensure	=> link,
-		source	=> "/opt/puppetlabs/bin/puppet",
-	}
+  include baseline::puppet
 
+  case $os[family] {
+    'Debian': { 
+      include baseline::apt
+    }
+    default: {
+      notify { "Unsupported OS family ${os[family]}": }
+    }
 }
