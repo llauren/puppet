@@ -1,8 +1,8 @@
 class baseline::apt {
 
-  class { 'apt':
-    update => { frequency => 'daily', }
-  }
+#  class { 'apt':
+#    update => { frequency => 'daily', }
+#  }
 
   $base_packages = [ 'fail2ban', 'mosh', 'ufw', 'vim', 'unattended-upgrades']
   package { $base_packages:
