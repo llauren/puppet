@@ -1,0 +1,1 @@
+rsync --exclude='.git' -arvi . /etc/puppetlabs/code/
