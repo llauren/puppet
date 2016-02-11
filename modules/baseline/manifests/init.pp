@@ -53,4 +53,5 @@ class baseline {
     default: {
       notify { "Unsupported OS family ${os[family]}": }
     }
+  }
 }
