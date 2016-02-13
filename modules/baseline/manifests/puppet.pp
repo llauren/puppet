@@ -1,8 +1,8 @@
 class baseline::puppet {
 
   service { 'puppet':
-#    ensure => 'running',
-#    enable => 'true',
+    ensure => 'running',
+    enable => 'true',
   }
 
   file { '/usr/local/bin/puppet':
