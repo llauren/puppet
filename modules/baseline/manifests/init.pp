@@ -54,4 +54,9 @@ class baseline {
       notify { "Unsupported OS family ${os[family]}": }
     }
   }
+
+  service { 'puppet':
+    ensure => 'running',
+    enable => 'true',
+  }
 }
