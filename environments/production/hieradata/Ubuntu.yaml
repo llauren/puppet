@@ -1,0 +1,30 @@
+---
+apt::sources:
+  'puppetlabs':
+    location: 'http://apt.puppetlabs.com'
+    repos: 'main'
+    key:
+      id: '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30'
+      server: 'pgp.mit.edu'
+
+  'erlang':
+    location: 'http://packages.erlang-solutions.com/ubuntu' 
+    release: 'trusty'
+    repos: 'contrib'
+    key:
+      source: 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
+      id: '434975BD900CCBE4F7EE1B1ED208507CA14F4FCA' # from https://github.com/garethr/garethr-erlang/blob/master/manifests/params.pp
+    include:
+      src: false
+      deb: true
+
+  'rabbitmq':
+    location: 'http://www.rabbitmq.com/debian/'
+    release: 'testing'
+    repos: 'main'
+    key:
+      source: 'https://www.rabbitmq.com/rabbitmq-signing-key-public.asc'
+    include:
+      deb: true
+      src: false
+
