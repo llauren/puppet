@@ -44,6 +44,8 @@
 #
 class baseline {
 
+  notify { "Applying baseline settings": }
+
   include baseline::puppet
 
   case $os[family] {
