@@ -1,5 +1,7 @@
 class baseline::puppet {
 
+  notify { "Puppet stuff...": }
+
   service { 'puppet':
     ensure => 'running',
     enable => 'true',

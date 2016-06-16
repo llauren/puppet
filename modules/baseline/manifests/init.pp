@@ -44,12 +44,12 @@
 #
 class baseline {
 
-  notify { "Applying baseline settings": }
 
   include baseline::puppet
 
   case $os[family] {
     'Debian': { 
+      notify { "Applying Debian settings": }
       include baseline::apt
     }
     default: {
