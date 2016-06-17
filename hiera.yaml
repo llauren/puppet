@@ -2,7 +2,8 @@
 :backends:
   - yaml
 :hierarchy:
-  - %{domain}
+  - "%{::os::name}"
+  - "%{domain}"
   - "nodes/%{::trusted.certname}"
   - common
 

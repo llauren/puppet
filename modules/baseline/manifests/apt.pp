@@ -2,7 +2,7 @@ class baseline::apt {
 
   class { 'apt':
     update => { frequency => 'daily', }
-    purge  => { 'sources.list.d' => true, }
+#    purge  => { 'sources.list.d' => true, }
   }
 
   $base_packages = [ 'fail2ban', 'mosh', 'ufw', 'vim', 'unattended-upgrades', 'lsb-release']
