@@ -17,13 +17,16 @@
 This module is just to configure my puppet server. By such, it is quite likely
 of very little use to you. Sorry about that.
 
+
 ## Setup
 
 Don't.
 
-### What puppetserver affects **OPTIONAL**
+### What puppetserver affects 
 
-This module will (eventually) conigure my puppet server so that it can receive
+This module was just created, so it actually does not do anything. At all.
+
+The module will _eventually_ conigure my puppet server so that it can receive
 code from git. For that, it needs a local directory `/usr/local/puppet` which
 i will have to init with `git init bare puppet` -- manually unless there's a 
 nice and nifty module for that. And then i'll have to create a mechanism for 
@@ -36,7 +39,7 @@ There shall be no secret stuff from my infrastructure here, apart from some
 hostnames. I'm not skilled enough to know how to hide those (cf. ansible vault).
 
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements 
 
 You'll need my puppet server.
 
