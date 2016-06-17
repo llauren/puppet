@@ -1,12 +1,11 @@
 class baseline::apt {
 
-  notify { "apt stuff...": }
+  class { 'apt':
+    update => { frequency => 'daily', }
+    purge  => { 'sources.list.d' => true, }
+  }
 
-#  class { 'apt':
-#    update => { frequency => 'daily', }
-#  }
-
-  $base_packages = [ 'fail2ban', 'mosh', 'ufw', 'vim', 'unattended-upgrades']
+  $base_packages = [ 'fail2ban', 'mosh', 'ufw', 'vim', 'unattended-upgrades', 'lsb-release']
   package { $base_packages:
     ensure => latest,
   }

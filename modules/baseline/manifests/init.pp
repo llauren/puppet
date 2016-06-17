@@ -44,7 +44,6 @@
 #
 class baseline {
 
-
   include baseline::puppet
 
   case $os[family] {
