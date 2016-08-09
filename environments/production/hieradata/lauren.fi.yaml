@@ -1,2 +1,21 @@
 ---
+telegraf::global_tags:
+  role: "%{::role}"
+  hostgroup: "%{::hostgroup}"
+  domain: "%{::domain}"
+telegraf::inputs:
+  cpu:
+    percpu: false
+    totalcpu: true
+  mem:
+  io:
+  net:
+  disk:
+  swap:
+  system:
+telegraf::outputs:
+  influxdb:
+    urls:
+      - "http://cnx.%{::domain}:8086"
+    database: 'influxdb'
 
