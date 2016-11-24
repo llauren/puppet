@@ -10,7 +10,7 @@ class baseline::puppet {
   file { '/usr/local/bin/puppet':
     ensure => link,
     target => '/opt/puppetlabs/bin/puppet',
-    mode => '0755',
+    mode   => '0755',
   }
 
 }

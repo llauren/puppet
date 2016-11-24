@@ -1,3 +1,11 @@
+# APT settings for Debian boxes
+#
+# - update repositories daily
+# - install fail2ban, mosh, uncomplicated firewall (ufw), vim and
+#   unattended-upgrades
+# - configure apt to install upgrades, remove unused dependencies and
+#   reboot automatically if required
+#
 class baseline::apt {
 
   class { 'apt':
@@ -12,23 +20,23 @@ class baseline::apt {
 
 # This may or may not be magically applied by pkg unattended upgrades :/
   file_line { 'apt-upgrade':
-    path => '/etc/apt/apt.conf.d/50unattended-upgrades',
-    match => '//[\w\t]*"\$\{distro_id\}:\$\{distro_codename\}-updates";',
-    line => '	"${distro_id}:${distro_codename}-updates";',
+    path    => '/etc/apt/apt.conf.d/50unattended-upgrades',
+    match   => '//[\w\t]*"\$\{distro_id\}:\$\{distro_codename\}-updates";',
+    line    => '	"${distro_id}:${distro_codename}-updates";',
     require => Package['unattended-upgrades'],
   }
 
   file_line { 'apt-autoremove':
-    path => '/etc/apt/apt.conf.d/50unattended-upgrades',
-    match => '//[\w\t]*Unattended-Upgrade::Remove-Unused-Dependencies ".*";',
-    line => 'Unattended-Upgrade::Remove-Unused-Dependencies "true";',
+    path    => '/etc/apt/apt.conf.d/50unattended-upgrades',
+    match   => '//[\w\t]*Unattended-Upgrade::Remove-Unused-Dependencies ".*";',
+    line    => 'Unattended-Upgrade::Remove-Unused-Dependencies "true";',
     require => Package['unattended-upgrades'],
   }
 
   file_line { 'apt-reboot':
-    path => '/etc/apt/apt.conf.d/50unattended-upgrades',
-    match => '//[\w\t]*Unattended-Upgrade::Automatic-Reboot ".*";',
-    line => 'Unattended-Upgrade::Automatic-Reboot "true";',
+    path    => '/etc/apt/apt.conf.d/50unattended-upgrades',
+    match   => '//[\w\t]*Unattended-Upgrade::Automatic-Reboot ".*";',
+    line    => 'Unattended-Upgrade::Automatic-Reboot "true";',
     require => Package['unattended-upgrades'],
   }
 

@@ -1,53 +1,34 @@
 # Class: baseline
 # ===========================
 #
-# Full description of class baseline here.
+# Basic settings for all machines. Additions for Debians.
 #
 # Parameters
 # ----------
 #
-# Document parameters here.
-#
-# * `sample parameter`
-# Explanation of what this parameter affects and what it defaults to.
-# e.g. "Specify one or more upstream ntp servers as an array."
+# None
 #
 # Variables
 # ----------
 #
-# Here you should define a list of variables that this module would require.
-#
-# * `sample variable`
-#  Explanation of how this variable affects the function of this class and if
-#  it has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#  External Node Classifier as a comma separated list of hostnames." (Note,
-#  global variables should be avoided in favor of class parameters as
-#  of Puppet 2.6.)
-#
-# Examples
-# --------
-#
-# @example
-#    class { 'baseline':
-#      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
-#    }
+# None
 #
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# Robin Laurén <author@domain.com>
 #
 # Copyright
 # ---------
 #
-# Copyright 2016 Robin Laurén
+# Distributed under ISC License -- see LICENSE
 #
 class baseline {
 
   include baseline::puppet
 
   case $os[family] {
-    'Debian': { 
+    'Debian': {
       notify { "Applying Debian settings": }
       include baseline::apt
     }

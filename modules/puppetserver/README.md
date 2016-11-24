@@ -47,7 +47,7 @@ If you're handy with these things, you should be able to get by on yours.
 
 ### Beginning with puppetserver
 
-Assign the class `puppetserver` to the puppet servers. Huzzah!
+Assign the class `puppetserver` to the puppet server. Huzzah!
 
 
 ## Usage

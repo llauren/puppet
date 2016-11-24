@@ -40,9 +40,14 @@
 # Copyright
 # ---------
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Robin Laurén, unless otherwise noted.
 #
 class puppetserver {
 
+ file { '/usr/local/puppet':
+    ensure  => directory,
+    group   => 'adm',
+    mode    => '775',
+ }
 
 }
