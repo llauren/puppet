@@ -1,0 +1,3 @@
+[submodule "puppet-hiera-enc"]
+	path = puppet-hiera-enc
+	url = https://github.com/Zetten/puppet-hiera-enc.git
